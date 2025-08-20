@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: rgb(29 34 43); /* Light background color for better contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 40px; /* Increased padding for better spacing */
+    padding-top: 80px; /* Add padding to the top to account for the navbar */
+    width: calc(100% - 250px); /* Adjust the width of the main content */
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center the content */
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 28px; /* Slightly larger font size */
+    font-weight: bold;
+    margin-bottom: 30px; /* Increased margin for better spacing */
+    text-align: center;
+    color: white;
+}
+
+.profile-info {
+    background: rgb(33 38 49); /* White background for the profile info */
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow for a more elegant look */
+    width: 100%;
+    max-width: 600px; /* Limit the width for better readability */
+    text-align: left; /* Left-align the text */
+}
+
+.profile-info p {
+    margin-bottom: 15px; /* Increased margin for better spacing */
+    font-size: 18px;
+    color: rgb(166 168 173);
+}
+
+.profile-info p strong {
+    color: rgb(226 227 228);
+}
+
+.profile-info p span {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #777;
+}
+
+.edit-profile-btn,
+.save-profile-btn {
+    background: #625bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.edit-profile-btn:hover,
+.save-profile-btn:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}

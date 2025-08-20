@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic User Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/basic_user.css' %}" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+      <!-- Success Message -->
+      {% if messages %}
+      <div class="success-message">
+        <div class="success-content">
+          <svg class="checkmark" viewBox="0 0 52 52">
+            <circle
+              class="checkmark-circle"
+              cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+              stroke="#28a745"
+              stroke-width="4"
+            />
+            <path
+              class="checkmark-check"
+              fill="none"
+              stroke="#28a745"
+              stroke-width="4"
+              d="M14 27l7 7 16-16"
+            />
+          </svg>
+          <p>{% for message in messages %}{{ message }}<br />{% endfor %}</p>
+        </div>
+      </div>
+      <script>
+        setTimeout(function () {
+          const successMessage = document.querySelector(".success-message");
+          if (successMessage) {
+            successMessage.style.opacity = "0";
+            successMessage.style.transition = "opacity 0.5s ease";
+            setTimeout(() => successMessage.remove(), 500);
+          }
+        }, 3000);
+      </script>
+      {% endif %}
+
+      <style>
+        .success-message {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(255, 255, 255, 0.9);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .success-content {
+          background: #fff;
+          padding: 30px 50px;
+          {% comment %} border-radius: 16px; {% endcomment %}
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          animation: scaleUp 0.3s ease-in-out;
+        }
+
+        .checkmark {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 15px;
+          stroke-width: 4;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        .checkmark-circle {
+          stroke-dasharray: 157;
+          stroke-dashoffset: 157;
+          stroke: #28a745;
+          animation: stroke 1s ease forwards;
+        }
+
+        .checkmark-check {
+          stroke-dasharray: 36;
+          stroke-dashoffset: 36;
+          stroke: #28a745;
+          animation: stroke 0.5s 0.6s ease forwards;
+        }
+
+        .success-content p {
+          font-size: 22px;
+          font-weight: 600;
+          color: #333;
+          margin-top: 10px;
+          line-height: 1.5;
+        }
+
+        /* Animations */
+        @keyframes stroke {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes scaleUp {
+          from {
+            transform: scale(0.95);
+            opacity: 0.8;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      </style>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="card-container">
+          <div class="card" id="c1">
+            <h3>Total Income</h3>
+            <p>₹{{ total_income }}</p>
+          </div>
+          <div class="card" id="c2">
+            <h3>Total Expense</h3>
+            <p>₹{{ total_expense }}</p>
+          </div>
+          <div class="card" id="c3">
+            <h3>Remaining Balance</h3>
+            <p>₹{{ remaining_balance }}</p>
+          </div>
+          <div class="card" id="c4">
+            <h3>Goal Achievement</h3>
+            <p>{{ goal_achievement|floatformat:2 }}%</p>
+          </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="recent-transactions">
+          <h3>Recent Transactions</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for transaction in recent_transactions %}
+              <tr>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.type }}</td>
+                <td>{{ transaction.category.name }}</td>
+                <td>₹{{ transaction.amount }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

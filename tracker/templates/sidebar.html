@@ -1,0 +1,46 @@
+<!-- filepath: d:\finance_manager\tracker\templates\sidebar.html -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}" />
+{% comment %} {%include "footer.html"%} {% endcomment %}
+<!-- Navbar -->
+<nav class="navbar">
+  <header>🔄PocketFlow</header>
+  <a href="{% url 'basic_user' %}">Dashboard</a>
+  <a href="{% url 'profile' %}">Profile</a>
+</nav>
+<!-- Sidebar -->
+<div class="sidebar">
+  <header>MoneyFlow</header>
+  {% comment %}
+  <hr class="sidebar-divider" />
+  {% endcomment %}
+
+  <div class="menu-item">
+    <div class="sidebar-category">Set</div>
+    <a href="{% url 'set_goal' %}">🎯 Goal</a>
+  </div>
+  <div class="menu-item">
+    <div class="sidebar-category">Add</div>
+    <a href="{% url 'add_income' %}">➕ Income</a>
+  </div>
+  <div class="menu-item">
+    <a href="{% url 'add_expense' %}">➕ Expense</a>
+  </div>
+  <div class="menu-item">
+    <div class="sidebar-category">View</div>
+    <a href="{% url 'view_income' %}">📜 Income</a>
+  </div>
+  <div class="menu-item">
+    <a href="{% url 'view_expense' %}">📜 Expense</a>
+  </div>
+  <div class="menu-item">
+    <a href="{% url 'report' %}">📊 Report</a>
+  </div>
+  <div class="menu-item">
+    <a href="{% url 'chart' %}">📈 Chart</a>
+  </div>
+  <div class="logout">
+    <div class="sidebar-category">Logout</div>
+    <a href="{% url 'logout' %}">🔓 Logout</a>
+  </div>
+</div>

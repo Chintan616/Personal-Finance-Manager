@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Goal</title>
+    <link rel="stylesheet" href="{% static 'css/set_goal.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h2>Edit Goal</h2>
+        <form method="POST" action="{% url 'edit_goal' goal.id %}">
+          {% csrf_token %}
+          <label for="goal_amount">Goal Amount (₹):</label>
+          <input
+            type="number"
+            id="goal_amount"
+            name="goal_amount"
+            value="{{ goal.amount }}"
+            required
+          />
+          <label for="goal_month">Month:</label>
+          <input type="month" id="goal_month" name="goal_month" value="{{
+          goal.year }}-{{ goal.month|add:"0"|slice:"-2:" }}" required>
+          <button type="submit">Update Goal</button>
+        </form>
+        <form
+          method="POST"
+          action="{% url 'delete_goal' goal.id %}"
+          style="margin-top: 20px"
+        >
+          {% csrf_token %}
+          <button type="submit" class="delete-button">Delete Goal</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

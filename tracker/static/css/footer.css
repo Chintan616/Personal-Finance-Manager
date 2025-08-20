@@ -1,0 +1,23 @@
+.footer {
+    background-color: rgb(33 38 49); /* Match dark theme */
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid rgb(56 60 70); /* Top border for separation */
+    z-index: 1;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(33 38 49);
+}
+
+.footer p {
+    margin: 3px 0;
+}

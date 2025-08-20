@@ -1,0 +1,114 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Content Area */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background: rgb(29 34 43);
+}
+
+/* Page Title */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* Input Fields */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(56 60 70);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+    background-color: rgb(33 38 49);
+    color:  rgb(166 168 173);
+}
+
+/* Input Focus */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+/* Buttons */
+.btn-save,
+.btn-delete,
+.btn-cancel {
+    width: 20%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Save Button */
+.btn-save {
+    background: #28a745;
+    color: white;
+}
+
+.btn-save:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background: #625bff;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}

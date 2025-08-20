@@ -1,0 +1,50 @@
+.message-container {
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    margin-left: 250px; /* Push it to the right, so it's not on the sidebar */
+    width: calc(100% - 250px); /* Ensure it takes the main content width */
+    height: 92.8571429vh;
+    display: flex;
+    justify-content: center; /* Center the message */
+    z-index: 1000;
+    background-color: #28a745;
+    text-align: center;
+    align-items: center;
+}
+/* Default Message Styles */
+.message {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+}
+
+/* Success Message */
+.message.success {
+    background: #28a745;
+    color: white;
+}
+
+/* Error Message */
+.message.error {
+    background: #dc3545;
+    color: white;
+}
+
+/* Warning Message */
+.message.warning {
+    background: #ffc107;
+    color: black;
+}
+
+/* Message Hide Effect */
+.message.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h2>Edit Profile</h2>
+        <div class="profile-info">
+          <form method="POST">
+            {% csrf_token %} {{ form.as_p }}
+            <button type="submit" class="save-profile-btn">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

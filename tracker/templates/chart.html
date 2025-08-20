@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income and Expense Charts</title>
+    <link rel="stylesheet" href="{% static 'css/chart.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+      <div class="main-content">
+        <div class="income-div">
+          <!-- Income Charts -->
+          <h2>Income Charts</h2>
+          {% for chart in income_charts %}
+          <div class="chart-container">
+            <img
+              src="data:image/png;base64,{{ chart.chart_image }}"
+              alt="Income Chart for {{ chart.category }}"
+            />
+          </div>
+          {% endfor %}
+        </div>
+        <div class="divider"></div>
+
+        <!-- Expense Charts -->
+        <div class="expense-div">
+          <h2>Expense Charts</h2>
+          {% for chart in expense_charts %}
+          <div class="chart-container">
+            <img
+              src="data:image/png;base64,{{ chart.chart_image }}"
+              alt="Expense Chart for {{ chart.category }}"
+            />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

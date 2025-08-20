@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h2>User Profile</h2>
+        <div class="profile-info">
+          <p><strong>Username:</strong> {{ username }}</p>
+          <p><strong>First Name:</strong> {{ first_name }}</p>
+          <p><strong>Last Name:</strong> {{ last_name }}</p>
+          <p><strong>Email:</strong> {{ email }}</p>
+          <p><strong>Net Savings:</strong> ₹{{ net_savings }}</p>
+          <p><strong>Joined Date:</strong> {{ joined_date|date:"F j, Y" }}</p>
+          <a href="{% url 'edit_profile' %}" class="edit-profile-btn"
+            >Edit Profile</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

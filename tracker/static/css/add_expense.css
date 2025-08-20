@@ -1,0 +1,90 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Content Section */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 250px; /* Adjusting for sidebar */
+    background-color: rgb(29 34 43);
+}
+
+/* Title */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; /* Align title to left */
+    color: white;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 8px;
+    color: white;
+}
+
+/* Inputs and Select */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(56 60 70);
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+    background-color: rgb(33 38 49);
+    color: rgb(166 168 173);
+}
+input[type="number"]{
+    color: rgb(166 168 173);
+}
+/* Input focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Date input placeholder styling */
+input[type="date"] {
+    color: rgb(166 168 173);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #625bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Button hover effect */
+.btn:hover {
+    /* background: #36304a; */
+    transform: scale(1.02);
+    transition: ease-in-out;
+
+}

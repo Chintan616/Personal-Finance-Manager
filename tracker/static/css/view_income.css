@@ -1,0 +1,103 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Content Section */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px; /* Sidebar width */
+    background: rgb(29 34 43);
+    min-height: fit-content;
+
+}
+
+/* Full-width container */
+.container {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 auto;
+    background: rgb(29 34 43);
+    overflow: hidden;
+
+}
+
+/* Title */
+h2 {
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+/* Total Income */
+.total-income {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 15px;
+    /* background: #11111d; */
+    color: white;
+    padding: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(56 60 70);
+}
+
+th {
+    background: #323a49;
+    color: white;
+    font-weight: bold;
+}
+td{
+    background-color: rgb(33 38 49);
+    color: rgb(166 168 173);
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tr:hover {
+    background: #e3e3e3;
+}
+
+/* Edit Button */
+.edit-btn {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #625bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.edit-btn:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Income</title>
+    <link rel="stylesheet" href="{% static 'css/add_income.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/message.css' %}" />
+  </head>
+  <body>
+    {% include "sidebar.html" %} {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+      <div class="message {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Include the JavaScript file -->
+
+    <script src="{% static 'js/message.js' %}"></script>
+    <div class="main-container">
+      <!-- Main Content -->
+      <div class="content">
+        <div class="container">
+          <h2 class="heading">Add Your Incomes</h2>
+
+          <div class="form-container">
+            <form method="POST">
+              {% csrf_token %}
+
+              <label for="amount">Enter Income Amount</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                required
+                placeholder="Enter amount"
+              />
+
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+              </select>
+
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+
+              <label for="description">Description (Optional)</label>
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Add a description..."
+              ></textarea>
+
+              <button type="submit" class="btn">Add Income</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

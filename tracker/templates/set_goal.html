@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Savings Goal</title>
+    <link rel="stylesheet" href="{% static 'css/set_goal.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/message.css' %}" />
+  </head>
+  <body>
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+      <div class="message {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <script src="{% static 'js/message.js' %}"></script>
+
+    <div class="wrapper">
+      {% include "sidebar.html" %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h2>Set Savings Goal</h2>
+        <form method="POST" action="{% url 'set_goal' %}">
+          {% csrf_token %}
+          <label for="goal_amount">Goal Amount (₹):</label>
+          <input type="number" id="goal_amount" name="goal_amount" required />
+          <label for="goal_month">Month:</label>
+          <input type="month" id="goal_month" name="goal_month" required />
+          <button type="submit">Set Goal</button>
+        </form>
+
+        <!-- Display Goals -->
+        <h3>Existing Goals</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Amount (₹)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for goal in goals %}
+              <tr>
+                <td>{{ goal.year }}</td>
+                <td>{{ goal.month_name }}</td>
+                <td>{{ goal.amount }}</td>
+                <td>
+                  <a href="{% url 'edit_goal' goal.id %}" class="edit-btn"
+                    >Edit</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

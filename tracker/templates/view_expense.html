@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Income</title>
+    <link rel="stylesheet" href="{% static 'css/view_expense.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/message.css' %}" />
+  </head>
+  <body>
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+      <div class="message {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Include the JavaScript file -->
+    <script src="{% static 'js/message.js' %}"></script>
+
+    <div class="main-container">
+      {% include "sidebar.html" %}
+
+      <!-- Main Content -->
+      <div class="content">
+        <div class="container">
+          <h2>Your Expense Records</h2>
+
+          <!-- Display Total Income -->
+          <div class="total-expense">
+            <strong>Total Expense: ₹{{ total_expense }}</strong>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+                <!-- New column for edit & delete actions -->
+              </tr>
+            </thead>
+            <tbody>
+              {% for expense in expenses %}
+              <tr>
+                <td>{{ expense.category.name }}</td>
+                <td>₹{{ expense.amount }}</td>
+                <td>{{ expense.date }}</td>
+                <td>{{ expense.description }}</td>
+                <td>
+                  <!-- Edit button -->
+                  <a href="{% url 'edit_expense' expense.id %}" class="edit-btn"
+                    >Edit</a
+                  >
+                </td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="5">No expense records found.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+/* Background Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: rgb(24 24 26);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 0px;
+}
+
+/* Icon */
+.signup-container img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Form Title */
+.signup-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.signup-container p {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 20px;
+    margin-top: 4px;
+}
+
+/* Form Fields */
+.signup-container .form-group {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.signup-container label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 44px;
+}
+
+.signup-container input {
+    width: 275px;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+/* Submit Button */
+.signup-container button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background-color: #625bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+.signup-container button:hover {
+    background-color: #4c46cc;
+}
+
+/* Login Link */
+.signup-container .login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.signup-container .login-link a {
+    color: #625bff;
+    text-decoration: none;
+}
+
+.signup-container .login-link a:hover {
+    text-decoration: underline;
+}

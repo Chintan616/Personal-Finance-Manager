@@ -1,0 +1,133 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(29 34 43);
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+}
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+.main-content {
+    margin-left: 250px; /* Same width as the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Adjust the width of the main content */
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: flex-start; /* Align to the top */
+    flex-direction: column;
+}
+
+form {
+    background: none;
+    padding: 0;
+    width: 100%;
+    max-width: 100%; /* Full width of the content area */
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    color: white;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid  rgb(56 60 70);
+    border-radius: 4px;
+    background-color:  rgb(33 38 49);
+    color: white;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #625bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+        transform: scale(1.02);
+        transition: ease-in-out;
+}
+h3{
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: white;
+}
+.table-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    background-color: rgb(33 38 49);
+    text-align: left;
+    border-bottom: 1px solid rgb(56 60 70);
+}
+
+table th {
+    background-color: #323a49;
+    font-weight: bold;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+table td{
+    color: rgb(166 168 173);
+}
+.edit-btn {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #625bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.edit-btn:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+.delete-button {
+    background: #ff2f2f;
+}
+
+.delete-button:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
